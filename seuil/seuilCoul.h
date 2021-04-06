@@ -1,8 +1,9 @@
-#include <ap_cint.h>
+//#include <ap_cint.h>
 #define LARGEUR 400
 #define HAUTEUR 268
 
-typedef uint8 colorType;
+//typedef uint8 colorType;
+typedef int colorType;
 typedef struct 
 {
 	colorType r;

@@ -7,7 +7,7 @@ void seuilCoul( pixelType *pixOut, pixelType pixIN)
 	colorType resR,resG,resB;
 
 	resR=((valR<valG)||(valR<valB))?0:valR;
-	resG=((valG<valR)||(valG<valB))?0:valR;
+	resG=((valG<valR)||(valG<valB))?0:valG;
 	resB=((valB<valR)||(valB<valG))?0:valB;
 	pixOut->r=resR;
 	pixOut->g=resG;

@@ -10,4 +10,5 @@ typedef struct
 	colorType b;
 }pixelType;
 
+
 void seuilCoul( pixelType *pixOut, pixelType pixIN);

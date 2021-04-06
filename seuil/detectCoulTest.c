@@ -4,12 +4,14 @@
 int main () {
   FILE *fpTest , *fpRes;
   
-  fpTest=fopen("fichierTest.ppm","r+");
+  fpTest=fopen("/home/rodney/Documents/code/AAP-image-main/seuil/fichierTest.ppm","r+");
   
   int  r,g,b;
   pixelType in,out;
   detectType resultat;
-  for (int a = 0; a < LARGEUR*HAUTEUR;a++)
+  int a ;
+  printf("true== %d false == %d \n",true,false);
+  for (a = 0; a < LARGEUR*HAUTEUR;a++)
   {
  
     fscanf(fpTest,"%i",&r);
@@ -21,8 +23,9 @@ int main () {
     in.b=b;
     
     detectCoul(&resultat, in,a);
-    printf("\t %d :: %d \n",a ,resultat );
+    //printf("\t %d :: %d \n",a ,resultat );
   }
+  printf("\t pixel n° :: %d  valeur :: %d \n",a ,resultat );
   fclose(fpTest);
   
 

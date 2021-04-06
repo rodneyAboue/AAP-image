@@ -1,5 +1,5 @@
 #include "detectCoul.h"
-void detectCoul( detectType *resultat, pixelType pixIN ,int a )
+void detectCoul( detectType *resultat, pixelType pixIN ,int a /*bool sign*/)
 {
 	colorType  valR =pixIN.r;
 	colorType  valG =pixIN.g;
@@ -10,7 +10,14 @@ void detectCoul( detectType *resultat, pixelType pixIN ,int a )
 	cptR=((valR<valG)||(valR<valB))?cptR:cptR++;
 	cptG=((valG<valR)||(valG<valB))?cptG:cptG++;
 	cptB=((valB<valR)||(valB<valG))?cptB:cptB++;
-
+	/*
+	if (cptR==cptB && cptR==cptG)
+	{
+		//resultat non significatif 
+		*resultat=DEFAULT;
+		sign=false;
+	}
+	*/
 	if (cptR>=cptB && cptR>=cptG)
 	{
 		*resultat=cptR;
@@ -27,5 +34,5 @@ void detectCoul( detectType *resultat, pixelType pixIN ,int a )
 	{
 		cptG=cptB=cptR=0;
 	}
-	
+	//sign=true;
 }
